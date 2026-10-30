@@ -1,0 +1,2 @@
+{"timestamp":"2026-10-27T09:12:44.101Z","commandCategory":"filesystem","risk":"HIGH","ruleIds":["FS_RECURSIVE_DELETE"],"decision":"CONFIRM","confirmationRequested":true,"approved":false,"executed":false,"uncertain":false,"source":"run"}
+{"timestamp":"2026-10-27T09:13:02.877Z","commandCategory":"filesystem","risk":"CRITICAL","ruleIds":["FS_ROOT_DELETE","FS_RECURSIVE_DELETE"],"decision":"BLOCK","confirmationRequested":false,"approved":false,"executed":false,"uncertain":false,"source":"run"}

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "security": {
+    "defaultUnknownCommandPolicy": "CONFIRM",
+    "blockedCommands": ["terraform destroy*", "kubectl delete namespace*", "regex:^npm (publish|unpublish)"],
+    "trustedCommands": ["rm -rf dist", "rm -rf node_modules"]
+  },
+  "environment": {
+    "protectedDirectories": ["~/important-data", "/srv/backups"],
+    "productionDatabaseHosts": ["prod-db.example.com"],
+    "productionDatabaseNames": ["orders_prod"],
+    "productionKubeContexts": ["prod-cluster"],
+    "productionTerraformWorkspaces": ["production"],
+    "productionCloudProfiles": ["prod"]
+  }
+}

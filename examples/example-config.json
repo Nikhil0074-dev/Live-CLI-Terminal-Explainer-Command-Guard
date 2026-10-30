@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "policyProfile": "default",
+  "ai": { "enabled": true, "provider": "ollama", "baseUrl": "http://127.0.0.1:11434", "model": "YOUR_INSTALLED_MODEL", "timeoutMs": 8000 },
+  "security": {
+    "defaultUnknownCommandPolicy": "WARN",
+    "requireConfirmationForHighRisk": true,
+    "blockCriticalOperations": true,
+    "allowExecutionWhenAiUnavailable": true,
+    "allowYesFlag": false,
+    "hookMode": "risky"
+  },
+  "logging": { "enabled": true, "storeRawCommands": false, "retentionDays": 90 },
+  "environment": { "protectedDirectories": [], "productionDatabaseHosts": [], "productionCloudAccountIds": [] }
+}
