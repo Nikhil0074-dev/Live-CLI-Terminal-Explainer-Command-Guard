@@ -1,0 +1,62 @@
+TEST REPORT - generated 2026-10-29T06:39:52Z on Node v22.22.2, GNU bash, version 5.2.21(1)-release (x86, zsh 5.9 (x86_64-ubuntu-linux-gnu)
+
+=== npm test (build + vitest: unit + integration) ===
+ ✓ tests/integration/explainCommand.test.ts (27 tests) 862ms
+   ✓ compiled binary (dist/cli.js) > runs, prints version and uses real exit codes 339ms
+   ✓ compiled binary (dist/cli.js) > a real child process: y deletes, n keeps, and stdout stays clean 321ms
+ ✓ tests/unit/ruleEngine.test.ts (131 tests) 199ms
+ ✓ tests/unit/explanationService.test.ts (18 tests) 87ms
+ ✓ tests/integration/guardedExecution.test.ts (18 tests) 148ms
+ ✓ tests/unit/policyEngine.test.ts (21 tests) 32ms
+ ✓ tests/unit/execution.test.ts (19 tests) 264ms
+ ✓ tests/unit/configManager.test.ts (16 tests) 28ms
+ ✓ tests/integration/ollamaFallback.test.ts (8 tests) 700ms
+   ✓ Ollama over real HTTP > times out on a hanging model and falls back, with decisions unchanged 308ms
+ ✓ tests/unit/hookInstaller.test.ts (16 tests) 42ms
+ ✓ tests/unit/logSanitizer.test.ts (13 tests) 25ms
+ ✓ tests/integration/environmentGuard.test.ts (8 tests) 60ms
+ ✓ tests/unit/commandAnalyzer.test.ts (15 tests) 19ms
+ ✓ tests/unit/tokenizer.test.ts (16 tests) 13ms
+ ✓ tests/unit/fallbackExplainer.test.ts (11 tests) 10ms
+ ✓ tests/unit/paths.test.ts (6 tests) 4ms
+ Test Files  15 passed (15)
+      Tests  343 passed (343)
+   Duration  14.11s (transform 5.52s, setup 0ms, collect 2.09s, tests 2.49s, environment 4ms, prepare 6.08s)
+exit=0
+
+=== tests/shell/bash.integration.test.sh ===
+PASS bash(non-interactive): protected delete is skipped
+PASS bash(non-interactive): block reason shown
+PASS bash(non-interactive): shell keeps working after a block
+PASS bash(non-interactive): harmless commands run
+PASS bash: CONFIRM without a terminal cancels
+PASS bash: GUARD_DISABLE=1 is the documented, visible bypass
+PASS bash: broken guard fails closed (command skipped)
+PASS bash: broken guard explains itself
+PASS bash: install adds the block
+PASS bash: install is idempotent
+PASS bash: uninstall restores the original file
+PASS bash: sourcing the installed rc enables protection
+  pty| PASS bash: harmless command runs
+  pty| PASS bash: protected target is BLOCKED
+  pty| PASS bash: CONFIRM asks, 'n' cancels (dir kept)
+  pty| PASS bash: CONFIRM then 'y' runs (dir removed)
+  pty| PASS bash: shell still usable afterwards
+  pty| RESULT: ALL PASSED
+PASS bash: interactive pty session (block, confirm n/y, usable afterwards)
+RESULT: 13 passed, 0 failed
+
+=== tests/shell/zsh.integration.test.sh ===
+PASS zsh: install adds the block
+PASS zsh: install is idempotent
+PASS zsh: uninstall restores the original file
+PASS zsh: installed block points at guard.zsh
+PASS zsh: rc file and hook script parse without errors
+  pty| PASS zsh: harmless command runs
+  pty| PASS zsh: protected target is BLOCKED
+  pty| PASS zsh: CONFIRM asks, 'n' cancels (dir kept)
+  pty| PASS zsh: CONFIRM then 'y' runs (dir removed)
+  pty| PASS zsh: shell still usable afterwards
+  pty| RESULT: ALL PASSED
+PASS zsh: interactive pty session (block, confirm n/y, usable afterwards)
+RESULT: 6 passed, 0 failed
