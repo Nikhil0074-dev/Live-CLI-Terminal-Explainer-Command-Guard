@@ -1,0 +1,25 @@
+{
+  "environment": {
+    "protectedDirectories": [
+      "/srv/protected"
+    ],
+    "productionDatabaseHosts": [
+      "prod-db.example.com"
+    ],
+    "productionDatabaseNames": [
+      "orders_prod"
+    ],
+    "productionKubeContexts": [
+      "prod-cluster"
+    ],
+    "productionTerraformWorkspaces": [
+      "production"
+    ],
+    "productionCloudProfiles": [
+      "prod"
+    ],
+    "productionCloudAccountIds": [
+      "123456789012"
+    ]
+  }
+}

