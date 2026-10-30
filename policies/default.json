@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "security": {
+    "defaultUnknownCommandPolicy": "WARN",
+    "requireConfirmationForHighRisk": true,
+    "blockCriticalOperations": true
+  }
+}

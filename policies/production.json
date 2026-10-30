@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "security": {
+    "defaultUnknownCommandPolicy": "CONFIRM",
+    "requireConfirmationForHighRisk": true,
+    "blockCriticalOperations": true,
+    "allowYesFlag": false,
+    "hookMode": "all",
+    "blockedCommands": [
+      "terraform destroy*",
+      "git push --force*",
+      "git push -f*",
+      "git reset --hard*",
+      "rm -rf /*",
+      "mkfs*",
+      "dd if=*of=/dev/*"
+    ]
+  },
+  "logging": { "enabled": true, "storeRawCommands": false, "retentionDays": 365 }
+}
